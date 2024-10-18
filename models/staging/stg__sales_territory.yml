@@ -1,0 +1,56 @@
+# version: 2
+
+# models:
+#   - name: stg__sales_territory
+#     description: "Tabela que contém as informações sobre territórios de vendas, incluindo dados financeiros e regionais."
+#     columns:
+#       - name: territory_id
+#         description: "Identificador único do território"
+#         data_tests:
+#           - not_null
+#           - unique
+
+#       - name: territory_name
+#         description: "Nome do território"
+#         data_tests:
+#           - not_null
+
+#       - name: country_region_code
+#         description: "Código da região ou país do território"
+#         data_tests:
+#           - not_null
+
+#       - name: territory_group
+#         description: "Grupo do território"
+#         data_tests:
+#           - not_null
+
+#       - name: sales_ytd
+#         description: "Vendas no ano até a data"
+#         data_tests:
+#           - not_null
+
+#       - name: sales_last_year
+#         description: "Vendas do ano passado"
+#         data_tests:
+#           - not_null
+
+#       - name: cost_ytd
+#         description: "Custo no ano até a data"
+#         data_tests:
+#           - not_null
+
+#       - name: cost_last_year
+#         description: "Custo do ano passado"
+#         data_tests:
+#           - not_null
+
+#       - name: rowguid
+#         description: "Identificador global único do registro."
+#         data_tests:
+#           - not_null
+
+#       - name: modified_date
+#         description: "Data da última modificação do registro"
+#         data_tests:
+#           - not_null

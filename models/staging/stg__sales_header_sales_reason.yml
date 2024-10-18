@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg__sales_header_sales_reason
+    description: "Tabela que conecta as razões de venda associadas aos pedidos de venda."
+    columns:
+      - name: sales_order_id
+        description: "Identificador único do pedido de venda."
+        data_tests:
+          - not_null
+
+      - name: sales_reason_id
+        description: "Identificador da razão de venda."
+        data_tests:
+          - not_null
+
+      - name: modified_date
+        description: "Data da última modificação do registro."
+        data_tests:
+          - not_null
