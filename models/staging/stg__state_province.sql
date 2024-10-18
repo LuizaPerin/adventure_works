@@ -11,7 +11,7 @@ source as (
         , StateProvinceCode as state_province_code
         , CountryRegionCode as coutry_region_code
         , IsOnlyStateProvinceFlag as is_only_state_province_flag
-        , 'Name' as state_province_name
+        , Name as state_province_name
         , TerritoryID as territory_id
         , rowguid
         , ModifiedDate as modified_date

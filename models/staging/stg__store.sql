@@ -8,7 +8,7 @@ source as (
 , renamed as (
     select
         BusinessEntityID as business_entity_id
-        , 'Name' as store_name
+        , Name as store_name
         , SalesPersonID as sales_person_id
         , Demographics
         , rowguid

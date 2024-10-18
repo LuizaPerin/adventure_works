@@ -8,7 +8,7 @@ source as (
 , renamed as (
     select
         SalesReasonID as sales_reason_id
-        , 'Name' as sales_reason_name
+        , Name as sales_reason_name
         , ReasonType as reason_type
         , ModifiedDate as modified_date
     from source

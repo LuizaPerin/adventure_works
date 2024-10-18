@@ -8,7 +8,7 @@ source as (
 , renamed as (
     select
         ProductID as product_id
-        , 'Name' as product_name
+        , Name as product_name
         , ProductNumber as product_number
         , MakeFlag as make_flag
         , FinishedGoodsFlag as fineshed_goods_flag
@@ -22,9 +22,9 @@ source as (
         , WeightUnitMeasureCode as weight_unit_measure_code
         , Weight as product_weight
         , DaysToManufacture as days_to_manufacture
-        , ProductLine as product_line
-        , Class
-        , Style
+        , trim(ProductLine) as product_line
+        , trim(Class) as class
+        , trim(Style) as style
         , ProductSubcategoryID as product_subcategory_id
         , ProductModelID as product_model_id
         , SellStartDate as sell_start_date
