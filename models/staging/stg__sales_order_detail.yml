@@ -8,6 +8,9 @@ models:
         description: "Identificador do pedido de venda"
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__sales_order_header')
+              field: sales_order_id
 
       - name: sales_order_detail_id
         description: "Identificador único do detalhe do pedido de venda"
@@ -27,6 +30,9 @@ models:
         description: "Identificador do produto"
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__product')
+              field: product_id
 
       - name: special_offer_id
         description: "Identificador da oferta especial"
@@ -46,6 +52,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date

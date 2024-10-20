@@ -8,11 +8,17 @@ models:
         description: "Identificador único do pedido de venda."
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__sales_order_header')
+              field: sales_order_id
 
       - name: sales_reason_id
         description: "Identificador da razão de venda."
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__sales_reason')
+              field: sales_reason_id
 
       - name: modified_date
         description: "Data da última modificação do registro."

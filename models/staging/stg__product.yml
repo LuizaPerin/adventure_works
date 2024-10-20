@@ -18,15 +18,16 @@ models:
       - name: product_number
         description: "Número do produto."
         data_tests:
+          - unique
           - not_null
 
       - name: make_flag
-        description: "Indica se o produto é fabricado internamente."
+        description: "Indica se o produto é fabricado internamente. 0 = Product is purchased, 1 = Product is manufactured in-house."
         data_tests:
           - not_null
 
       - name: fineshed_goods_flag
-        description: "Indica se o produto é um bem acabado."
+        description: "0 = Product is not a salable item. 1 = Product is salable."
         data_tests:
           - not_null
 
@@ -71,19 +72,19 @@ models:
           - not_null
 
       - name: product_line
-        description: "Linha do produto."
+        description: "Linha do produto.	R = Road, M = Mountain, T = Touring, S = Standard"
         data_tests:
           - accepted_values:
               values: ['S', 'T', 'M', 'R']
 
       - name: Class
-        description: "Classe do produto."
+        description: "Classe do produto. H = High, M = Medium, L = Low"
         data_tests:
           - accepted_values:
               values: ['L', 'M', 'H']
 
       - name: Style
-        description: "Estilo do produto."
+        description: "Estilo do produto. W = Womens, M = Mens, U = Universal"
         data_tests:
           - accepted_values:
               values: ['W', 'M', 'U']
@@ -108,6 +109,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date

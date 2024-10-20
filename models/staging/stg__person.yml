@@ -42,7 +42,7 @@ models:
         description: "Sufixo do nome (ex: Jr., III)."
 
       - name: email_promotion
-        description: "Indica o nível de promoção por e-mail (0 a 2)."
+        description: "0 = Contact does not wish to receive e-mail promotions, 1 = Contact does wish to receive e-mail promotions from AdventureWorks, 2 = Contact does wish to receive e-mail promotions from AdventureWorks and selected partners."
         data_tests:
           - not_null
 
@@ -55,6 +55,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date

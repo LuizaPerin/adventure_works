@@ -39,6 +39,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date

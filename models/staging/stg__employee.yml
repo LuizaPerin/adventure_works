@@ -13,11 +13,13 @@ models:
       - name: national_id_number
         description: "Número de identificação nacional do empregado."
         data_tests:
+          - unique
           - not_null
 
       - name: login_id
         description: "Identificador de login do empregado."
         data_tests:
+          - unique
           - not_null
 
       - name: job_title
@@ -72,6 +74,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date

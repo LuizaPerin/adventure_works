@@ -29,14 +29,18 @@ models:
         description: "Data de envio do pedido."
 
       - name: Status
-        description: "Status do pedido (0 a 8)."
+        description: "Status do pedido. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled"
         data_tests:
           - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6]
 
       - name: oline_order_flag
-        description: "Indica se o pedido foi realizado online."
+        description: "Indica se o pedido foi realizado online. 0 = Order placed by sales person. 1 = Order placed online by customer."
         data_tests:
           - not_null
+          - accepted_values:
+              values: [0, 1]
 
       - name: purchase_order_number
         description: "Número do pedido de compra."
@@ -48,9 +52,16 @@ models:
         description: "Identificador do cliente associado ao pedido."
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__customer')
+              field: customer_id
 
       - name: sales_person_id
         description: "Identificador do vendedor associado ao pedido."
+        data_tests:
+          - relationships:
+              to: ref('stg__person')
+              field: business_entity_id
 
       - name: territory_id
         description: "Identificador do território associado ao pedido."
@@ -59,11 +70,17 @@ models:
         description: "Identificador do endereço de cobrança."
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__address')
+              field: address_id
 
       - name: ship_to_address_id
         description: "Identificador do endereço de entrega."
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__address')
+              field: address_id
 
       - name: ship_method_id
         description: "Identificador do método de envio."
@@ -72,6 +89,10 @@ models:
 
       - name: credit_card_id
         description: "Identificador do cartão de crédito utilizado."
+        data_tests:
+          - relationships:
+              to: ref('stg__credit_card')
+              field: credit_card_id
 
       - name: credit_card_approval_code
         description: "Código de aprovação do cartão de crédito."
@@ -80,7 +101,7 @@ models:
         description: "Identificador da taxa de câmbio."
 
       - name: sub_total
-        description: "Subtotal do pedido."
+        description: "Subtotal do pedido. Computed as SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID."
         data_tests:
           - not_null
 
@@ -95,7 +116,7 @@ models:
           - not_null
 
       - name: total_due
-        description: "Total devido do pedido."
+        description: "Total devido do pedido. Computed as Subtotal + TaxAmt + Freight."
 
       - name: Comment
         description: "Comentários adicionais sobre o pedido."
@@ -103,6 +124,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date

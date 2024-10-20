@@ -12,9 +12,17 @@ models:
 
       - name: person_id
         description: "Identificador da pessoa, se o cliente for uma pessoa."
+        data_tests:
+          - relationships:
+              to: ref('stg__person')
+              field: business_entity_id
 
       - name: store_id
         description: "Identificador da loja, se o cliente for uma loja ou estiver associada a uma loja."
+        data_tests:
+          - relationships:
+              to: ref('stg__store')
+              field: business_entity_id
 
       - name: territory_id
         description: "Identificador do território ao qual o cliente pertence."
@@ -22,6 +30,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date
