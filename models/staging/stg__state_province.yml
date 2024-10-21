@@ -19,13 +19,16 @@ models:
         description: "Código do país ou região onde o estado ou província está localizado"
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg__country_region')
+              field: country_region_code
 
       - name: is_only_state_province_flag
-        description: "Indicador se é o único estado ou província"
+        description: "Indicador se é o único estado ou província. 0 = StateProvinceCode exists. 1 = StateProvinceCode unavailable"
         data_tests:
           - not_null
           - accepted_values:
-              values: [true, false]
+              values: [0, 1]
 
       - name: state_province_name
         description: "Nome do estado ou província"
@@ -40,6 +43,7 @@ models:
       - name: rowguid
         description: "Identificador global único do registro."
         data_tests:
+          - unique
           - not_null
 
       - name: modified_date
