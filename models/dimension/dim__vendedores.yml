@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: dim__vendedores
+    description: "Tabela de dimensão vendedores. Contém apenas os representantes de vendas. Tabelas de origem: stg__sales_person, stg__employee, stg__person"
+    columns:
+      - name: business_entity_id
+        description: "ID da entidade de negócios do vendedor."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "Primeiro nome da pessoa."
+
+      - name: middle_name
+        description: "Nome do meio da pessoa."
+
+      - name: last_name
+        description: "Último nome da pessoa."
+
+      - name: job_title
+        description: "Título do trabalho do empregado."
+
+      - name: birth_date
+        description: "Data de nascimento do empregado."
+
+      - name: marital_status
+        description: "Estado civil do empregado."
+
+      - name: gender
+        description: "Gênero do empregado."
+
+      - name: hire_date
+        description: "Data de contratação do empregado."
+
+      - name: sales_quota
+        description: "Quota de vendas do vendedor."
+
+      - name: Bonus
+        description: "Bônus que o vendedor pode receber."
+
+      - name: commission_pct
+        description: "Porcentagem de comissão do vendedor."
+
+      - name: sales_ytd
+        description: "Vendas acumuladas até a data de hoje."
+
+      - name: sales_last_year
+        description: "Vendas do vendedor no ano anterior."

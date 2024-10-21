@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: dim__localizacao
+    description: "Tabela de dimensão localização. Tabelas de origem: stg__address, stg__country_region e stg__state_province"
+    columns:
+      - name: adress_id
+        description: "ID do endereço, único para cada endereço."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: country_region_code
+        description: "Código da região do país associado ao estado/província."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg__country_region')
+              field: country_region_code
+
+      - name: address_line_1
+        description: "Linha principal do endereço."
+        data_tests:
+          - not_null
+
+      - name: city
+        description: "Cidade associada ao endereço."
+        data_tests:
+          - not_null
+
+      - name: postal_code
+        description: "Código postal do endereço."
+        data_tests:
+          - not_null
+
+      - name: spatial_location
+        description: "Localização espacial do endereço (ex.: coordenadas geográficas)."
+        data_tests:
+          - not_null
+
+      - name: state_province_code
+        description: "Código do estado ou província."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg__state_province')
+              field: state_province_code
+
+      - name: state_province_name
+        description: "Nome do estado ou província."
+        data_tests:
+          - not_null
+
+      - name: country_region_name
+        description: "Nome da região do país."
+        data_tests:
+          - not_null

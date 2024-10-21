@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: dim__produtos
+    description: "Tabela de dimensão produtos. Tabela de origem: stg__product"
+    columns:
+      - name: product_id
+        description: "Identificador único do produto."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Nome do produto."
+        data_tests:
+          - not_null
+
+      - name: product_number
+        description: "Número do produto."
+        data_tests:
+          - not_null
+
+      - name: safety_stock_level
+        description: "Nível de estoque de segurança do produto."
+        data_tests:
+          - not_null
+
+      - name: reorder_point
+        description: "Ponto de reabastecimento do produto."
+        data_tests:
+          - not_null
+
+      - name: Color
+        description: "Cor do produto."
+
+      - name: product_size
+        description: "Tamanho do produto."
+
+      - name: size_unit_measure_code
+        description: "Código da unidade de medida do tamanho."
+
+      - name: weight_unit_measure_code
+        description: "Código da unidade de medida do peso."
+
+      - name: product_weight
+        description: "Peso do produto."
+
+      - name: days_to_manufacture
+        description: "Número de dias necessários para fabricar o produto."
+        data_tests:
+          - not_null
+
+      - name: Class
+        description: "Classe do produto. H = High, M = Medium, L = Low"
+        data_tests:
+          - accepted_values:
+              values: ['L', 'M', 'H']
+
+      - name: Style
+        description: "Estilo do produto. W = Womens, M = Mens, U = Universal"
+        data_tests:
+          - accepted_values:
+              values: ['W', 'M', 'U']
+
+      - name: sell_start_date
+        description: "Data de início da venda do produto."
+        data_tests:
+          - not_null
+
+      - name: sell_end_date
+        description: "Data de término da venda do produto."
+
+      - name: discontinued_date
+        description: "Data em que o produto foi descontinuado."
