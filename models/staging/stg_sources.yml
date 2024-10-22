@@ -308,44 +308,7 @@ sources:
             data_tests:
               - not_null
               - unique
-
-      # - name: salesterritory
-      #   description: "Tabela ccom informações de territórios de vendas."
-      #   columns:
-      #     - name: territoryid
-      #       description: "Identificador único do território"
-      #       data_tests:
-      #         - not_null
-      #         - unique
-
-      #     - name: salesytd
-      #       description: "Vendas no ano até a data"
-      #       data_tests:
-      #         - not_null
-      #         - dbt_utils.expression_is_true:
-      #             expression: ">= 0.00"
-
-      #     - name: saleslastyear
-      #       description: "Vendas do ano passado"
-      #       data_tests:
-      #         - not_null
-      #         - dbt_utils.expression_is_true:
-      #             expression: ">= 0.00"
-
-      #     - name: costytd
-      #       description: "Custo no ano até a data"
-      #       data_tests:
-      #         - not_null
-      #         - dbt_utils.expression_is_true:
-      #             expression: ">= 0.00"
-
-      #     - name: costlastyear
-      #       description: "Custo do ano passado"
-      #       data_tests:
-      #         - not_null
-      #         - dbt_utils.expression_is_true:
-      #             expression: ">= 0.00"
-
+              
       - name: stateprovince
         description: "Tabela que contém as informações sobre estados ou províncias."
         columns:

@@ -35,3 +35,5 @@ models:
             materialized: view
         dimension:
             materialized: table
+        fact:
+            materialized: table

@@ -9,9 +9,9 @@ source as (
     select
         SalesOrderID as sales_order_id
         , RevisionNumber as revision_number
-        , OrderDate as order_date
-        , DueDate as due_date
-        , ShipDate as ship_date
+        , OrderDate::date as order_date
+        , DueDate::date as due_date
+        , ShipDate::date as ship_date
         , Status
         , OnlineOrderFlag as oline_order_flag
         , PurchaseOrderNumber as purchase_order_number
