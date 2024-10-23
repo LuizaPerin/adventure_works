@@ -5,7 +5,7 @@ models:
     description: "Modelo que agrega informações sobre vendas, incluindo detalhes do pedido, informações do cliente e motivos de venda."
     columns:
       - name: unique_id
-        description: "Identificador único."
+        description: "Identificador único a partir de sales_order_id e product_id "
         data_data_tests:
           - unique
           - not_null
