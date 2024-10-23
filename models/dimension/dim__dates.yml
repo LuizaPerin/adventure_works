@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim__dates
-    description: "Modelo que gera uma dimensão de datas entre 2011-01-05 e 2014-07-01. Gerada apartir do package dbt_date"
+    description: "Modelo que gera uma dimensão de datas entre 2011-01-01 e 2014-07-01. Gerada apartir do package dbt_date"
     columns:
       - name: date_day
         description: "A data específica no formato YYYY-MM-DD."

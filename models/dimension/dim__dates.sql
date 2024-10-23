@@ -3,7 +3,7 @@
 with
 
 source as (
-    {{ dbt_date.get_date_dimension("2011-01-05", "2014-07-01") }}
+    {{ dbt_date.get_date_dimension("2011-05-01", "2014-07-01") }}
 )
 
 , dates as (
