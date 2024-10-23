@@ -176,6 +176,12 @@ sources:
 
       - name: salesorderheadersalesreason
         description: "Tabela que conecta as razões de venda associadas aos pedidos de venda."
+        columns:
+          - name: unique_id
+            description: "Identificador único a partir de sales_order_id e sales_reason_id"
+            data_data_tests:
+              - unique
+              - not_null
 
       - name: salesorderdetail
         description: "Detalhes dos pedidos de vendas."
@@ -308,7 +314,7 @@ sources:
             data_tests:
               - not_null
               - unique
-              
+
       - name: stateprovince
         description: "Tabela que contém as informações sobre estados ou províncias."
         columns:

@@ -7,7 +7,8 @@ source as (
 
 , renamed as (
     select
-        SalesOrderID as sales_order_id
+        md5(SalesOrderID || SalesReasonID) as unique_id
+        , SalesOrderID as sales_order_id
         , SalesReasonID as sales_reason_id
         , ModifiedDate as modified_date
     from source
