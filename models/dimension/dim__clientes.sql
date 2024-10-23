@@ -22,6 +22,7 @@ cliente as (
         , pessoa.first_name
         , pessoa.middle_name
         , pessoa.last_name
+        , pessoa.first_name || ' ' || pessoa.last_name as nome_cliente
         , cliente.store_id
         , loja.store_name
     from cliente
