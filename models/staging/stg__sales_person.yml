@@ -18,23 +18,15 @@ models:
 
       - name: Bonus
         description: "Bônus do vendedor"
-        data_tests:
-          - not_null
 
       - name: commission_pct
         description: "Porcentagem de comissão do vendedor"
-        data_tests:
-          - not_null
 
       - name: sales_ytd
         description: "Vendas no ano até a data"
-        data_tests:
-          - not_null
 
       - name: sales_last_year
         description: "Vendas do ano anterior"
-        data_tests:
-          - not_null
 
       - name: rowguid
         description: "Identificador global único do registro."

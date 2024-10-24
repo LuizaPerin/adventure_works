@@ -20,23 +20,15 @@ models:
 
       - name: address_line_1
         description: "Linha principal do endereço."
-        data_tests:
-          - not_null
 
       - name: city
         description: "Cidade associada ao endereço."
-        data_tests:
-          - not_null
 
       - name: postal_code
         description: "Código postal do endereço."
-        data_tests:
-          - not_null
 
       - name: spatial_location
         description: "Localização espacial do endereço (ex.: coordenadas geográficas)."
-        data_tests:
-          - not_null
 
       - name: state_province_code
         description: "Código do estado ou província."

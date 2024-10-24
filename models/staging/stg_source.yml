@@ -26,7 +26,7 @@ sources:
       - name: creditcard
         description: "Tabela de cartões de crédito."
         columns:
-          - name: credit_card_id
+          - name: creditcardid
             description: "Identificador único do cartão de crédito."
             data_tests:
               - unique
@@ -50,35 +50,27 @@ sources:
               - not_null
               - unique
 
-          # - name: birthdate
-          #   description: "Data de nascimento do empregado"
-          #   data_tests:
-          #     - dbt_utils.expression_is_true:
-          #         expression: "BETWEEN '1930-01-01' AND CURRENT_DATE - INTERVAL '18 years'"
-
           - name: maritalstatus
             data_tests:
+              - not_null
               - accepted_values:
                   values: ['M', 'S']
 
-          # - name: hiredate
-          #   description: "Data de contratação do empregado"
-          #   data_tests:
-          #     - dbt_utils.expression_is_true:
-          #         expression: "BETWEEN '1996-07-01' AND CURRENT_DATE + INTERVAL '1 day'"
-
           - name: gender
             data_tests:
+              - not_null
               - accepted_values:
                   values: ['M', 'F']
 
           - name: vacationhours
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: "BETWEEN -40 AND 240"
 
           - name: sickleavehours
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: "BETWEEN 0 AND 120"
 
@@ -92,14 +84,14 @@ sources:
               - unique
 
           - name: emailpromotion
-            description: "Valor indicando o tipo de promoção por e-mail"
+            description: "	0 = Contact does not wish to receive e-mail promotions, 1 = Contact does wish to receive e-mail promotions from AdventureWorks, 2 = Contact does wish to receive e-mail promotions from AdventureWorks and selected partners."
             data_tests:
               - accepted_values:
                   values: [0, 1, 2]
               - not_null
 
           - name: persontype
-            description: "Tipo de pessoa"
+            description: " SC = Store Contact, IN = Individual (retail) customer, SP = Sales person, EM = Employee (non-sales), VC = Vendor contact, GC = General contact"
             data_tests:
               - accepted_values:
                   values: ['SC', 'VC', 'IN', 'EM', 'SP', 'GC']
@@ -117,24 +109,28 @@ sources:
           - name: safetystocklevel
             description: "Nível de estoque de segurança do produto"
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: "> 0"
 
           - name: reorderpoint
             description: "Ponto de reabastecimento do produto"
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: "> 0"
 
           - name: standardcost
             description: "Custo padrão do produto"
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: ">= 0.00"
 
           - name: listprice
             description: "Preço de lista do produto"
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: ">= 0.00"
 
@@ -147,6 +143,7 @@ sources:
           - name: daystomanufacture
             description: "Número de dias para fabricar o produto"
             data_tests:
+              - not_null
               - dbt_utils.expression_is_true:
                   expression: ">= 0"
 

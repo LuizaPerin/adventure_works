@@ -29,8 +29,8 @@ sales_header as (
         , sales_detail.order_quantity
         , sales_detail.unit_price
         , sales_detail.unit_price_discount
-        , unit_price * order_quantity as gross_amount
-        , unit_price * (1 - unit_price_discount) * order_quantity as net_amount
+        , sales_detail.unit_price * sales_detail.order_quantity as gross_amount
+        , sales_detail.unit_price * (1 - sales_detail.unit_price_discount) * sales_detail.order_quantity as net_amount
         , gross_amount - net_amount as discount_amount
         , sales_header.sub_total
         , sales_header.tax_amt

@@ -49,6 +49,8 @@ models:
 
       - name: unit_price_discount
         description: "Desconto aplicado ao preço unitário."
+        data_tests:
+          - not_null
 
       - name: gross_amount
         description: "Total bruto do produto calculado como unit_price * order_quantity."

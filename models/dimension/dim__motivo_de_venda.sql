@@ -12,7 +12,8 @@ sales_header as (
 
 , motivo as (
     select
-        sales_header.sales_order_id as sales_order_id
+        unique_id
+        , sales_header.sales_order_id as sales_order_id
         , sales_header.sales_reason_id as sales_reason_id
         , sales_reason.sales_reason_name as sales_reason_name
         , sales_reason.reason_type as reason_type

@@ -36,18 +36,12 @@ models:
 
       - name: safety_stock_level
         description: "Nível de estoque de segurança do produto."
-        data_tests:
-          - not_null
 
       - name: reorder_point
         description: "Ponto de reabastecimento do produto."
-        data_tests:
-          - not_null
 
       - name: standard_cost
         description: "Custo padrão do produto."
-        data_tests:
-          - not_null
 
       - name: list_price
         description: "Preço de lista do produto."
@@ -68,8 +62,6 @@ models:
 
       - name: days_to_manufacture
         description: "Número de dias necessários para fabricar o produto."
-        data_tests:
-          - not_null
 
       - name: product_line
         description: "Linha do produto.	R = Road, M = Mountain, T = Touring, S = Standard"

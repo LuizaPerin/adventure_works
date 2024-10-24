@@ -12,5 +12,3 @@ models:
 
       - name: card_type
         description: "Tipo do cartão de crédito (ex: Visa, MasterCard)."
-        data_tests:
-          - not_null

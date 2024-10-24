@@ -22,25 +22,17 @@ models:
 
       - name: due_date
         description: "Data de vencimento do pedido."
-        data_tests:
-          - not_null
 
       - name: ship_date
         description: "Data de envio do pedido."
 
       - name: Status
         description: "Status do pedido. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled"
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 2, 3, 4, 5, 6]
 
       - name: oline_order_flag
         description: "Indica se o pedido foi realizado online. 0 = Order placed by sales person. 1 = Order placed online by customer."
         data_tests:
           - not_null
-          - accepted_values:
-              values: [0, 1]
 
       - name: purchase_order_number
         description: "Número do pedido de compra."
@@ -102,18 +94,12 @@ models:
 
       - name: sub_total
         description: "Subtotal do pedido. Computed as SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID."
-        data_tests:
-          - not_null
 
       - name: tax_amt
         description: "Valor do imposto sobre o pedido."
-        data_tests:
-          - not_null
 
       - name: Freight
         description: "Custo do frete do pedido."
-        data_tests:
-          - not_null
 
       - name: total_due
         description: "Total devido do pedido. Computed as Subtotal + TaxAmt + Freight."

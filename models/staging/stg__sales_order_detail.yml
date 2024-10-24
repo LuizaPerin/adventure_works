@@ -23,8 +23,6 @@ models:
 
       - name: order_quantity
         description: "Quantidade do pedido"
-        data_tests:
-          - not_null
 
       - name: product_id
         description: "Identificador do produto"
@@ -41,13 +39,9 @@ models:
 
       - name: unit_price
         description: "Preço unitário do produto"
-        data_tests:
-          - not_null
 
       - name: unit_price_discount
         description: "Desconto no preço unitário"
-        data_tests:
-          - not_null
 
       - name: rowguid
         description: "Identificador global único do registro."

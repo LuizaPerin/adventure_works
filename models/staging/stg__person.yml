@@ -11,11 +11,9 @@ models:
           - not_null
 
       - name: person_type
-        description: "Tipo de pessoa"
+        description: " SC = Store Contact, IN = Individual (retail) customer, SP = Sales person, EM = Employee (non-sales), VC = Vendor contact, GC = General contact"
         data_tests:
           - not_null
-          - accepted_values:
-              values: ['SC', 'VC', 'IN', 'EM', 'SP', 'GC']
 
       - name: name_style
         description: "Indica se a pessoa utiliza um estilo de nome específico."
@@ -43,8 +41,6 @@ models:
 
       - name: email_promotion
         description: "0 = Contact does not wish to receive e-mail promotions, 1 = Contact does wish to receive e-mail promotions from AdventureWorks, 2 = Contact does wish to receive e-mail promotions from AdventureWorks and selected partners."
-        data_tests:
-          - not_null
 
       - name: additional_contact_info
         description: "Informações de contato adicionais em formato XML."
