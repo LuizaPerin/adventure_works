@@ -1,11 +1,11 @@
 with
 
-source as (
+product as (
     select *
     from {{ ref('stg__product') }}
     )
 
-, produto as (
+, dim_produtos as (
     select
         product_id
         , product_name
@@ -23,7 +23,7 @@ source as (
         , sell_start_date
         , sell_end_date
         , discontinued_date
-    from source
+    from product
 )
 
-select * from produto
+select * from dim_produtos

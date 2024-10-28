@@ -1,15 +1,15 @@
 with
 
-source as (
+credit_card as (
     select *
     from {{ ref('stg__credit_card') }}
 )
 
-, cartao as (
+, dim_cartao as (
     select
         credit_card_id
         , card_type
-    from source
+    from credit_card
 )
 
-select * from cartao
+select * from dim_cartao

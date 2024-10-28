@@ -1,12 +1,10 @@
-{{ config(materialized='table') }}
-
 with
 
-source as (
+dates as (
     {{ dbt_date.get_date_dimension("2011-05-01", "2014-07-01") }}
 )
 
-, dates as (
+, dim_dates as (
     select
         date_day
         , day_of_month
@@ -17,7 +15,7 @@ source as (
         , quarter_of_year
         , week_of_year
         , year_number
-    from source
+    from dates
 )
 
-select * from dates
+select * from dim_dates

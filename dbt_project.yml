@@ -33,7 +33,5 @@ models:
     adventure_works:
         staging:
             materialized: view
-        dimension:
-            materialized: table
-        fact:
+        marts:
             materialized: table

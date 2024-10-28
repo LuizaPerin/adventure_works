@@ -17,10 +17,6 @@ models:
 
       - name: sales_person_id
         description: "Identificador do vendedor associado à loja"
-        data_tests:
-          - relationships:
-              to: ref('stg__sales_person')
-              field: business_entity_id
 
       - name: Demographics
         description: "Demografia da loja (dados em formato XML). The number of employees, annual sales and store type."

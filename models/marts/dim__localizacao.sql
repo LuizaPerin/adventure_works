@@ -15,7 +15,7 @@ address_table as (
     from {{ ref('stg__country_region') }}
     )
 
-, localizacao as (
+, dim_localizacao as (
     select
         address_table.address_id as adress_id
         , state_province.coutry_region_code as country_region_code
@@ -31,4 +31,4 @@ address_table as (
     inner join county_region on state_province.coutry_region_code = county_region.country_region_code
 )
 
-select * from localizacao
+select * from dim_localizacao

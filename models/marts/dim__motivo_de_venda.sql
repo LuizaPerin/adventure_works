@@ -10,7 +10,7 @@ sales_header as (
     from {{ ref('stg__sales_reason') }}
     )
 
-, motivo as (
+, dim_motivo as (
     select
         unique_id
         , sales_header.sales_order_id as sales_order_id
@@ -21,4 +21,4 @@ sales_header as (
     inner join sales_reason on sales_header.sales_reason_id = sales_reason.sales_reason_id
 )
 
-select * from motivo
+select * from dim_motivo
