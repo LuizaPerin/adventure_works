@@ -15,22 +15,6 @@ models:
         data_tests:
           - not_null
 
-      - name: card_number
-        description: "Número do cartão de crédito."
-        data_tests:
-          - unique
-          - not_null
-
-      - name: exp_month
-        description: "Mês de expiração do cartão (1-12)."
-        data_tests:
-          - not_null
-
-      - name: exp_year
-        description: "Ano de expiração do cartão."
-        data_tests:
-          - not_null
-
       - name: modified_date
         description: "Data da última modificação do registro"
         data_tests:

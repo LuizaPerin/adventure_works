@@ -12,14 +12,14 @@ product as (
         , product_number
         , safety_stock_level
         , reorder_point
-        , Color
+        , color
         , product_size
         , size_unit_measure_code
         , product_weight
         , weight_unit_measure_code
         , days_to_manufacture
-        , Class
-        , Style
+        , class
+        , style
         , sell_start_date
         , sell_end_date
         , discontinued_date

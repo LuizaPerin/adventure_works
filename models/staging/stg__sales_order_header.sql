@@ -7,31 +7,31 @@ source as (
 
 , renamed as (
     select
-        SalesOrderID as sales_order_id
-        , RevisionNumber as revision_number
-        , OrderDate::date as order_date
-        , DueDate::date as due_date
-        , ShipDate::date as ship_date
-        , Status
-        , OnlineOrderFlag as oline_order_flag
-        , PurchaseOrderNumber as purchase_order_number
-        , AccountNumber as account_number
-        , CustomerID as customer_id
-        , SalesPersonID as sales_person_id
-        , TerritoryID as territory_id
-        , BillToAddressID as bill_to_address_id
-        , ShipToAddressID as ship_to_address_id
-        , ShipMethodID as ship_method_id
-        , CreditCardID as credit_card_id
-        , CreditCardApprovalCode as credit_card_approval_code
-        , CurrencyRateID as currency_rate_id
-        , SubTotal as sub_total
-        , TaxAmt as tax_amt
-        , Freight
-        , TotalDue as total_due
-        , Comment
+        salesorderid as sales_order_id
+        , revisionnumber as revision_number
+        , orderdate::date as order_date
+        , duedate::date as due_date
+        , shipdate::date as ship_date
+        , status
+        , onlineorderflag as oline_order_flag
+        , purchaseordernumber as purchase_order_number
+        , accountnumber as account_number
+        , customerid as customer_id
+        , salespersonid as sales_person_id
+        , territoryid as territory_id
+        , billtoaddressid as bill_to_address_id
+        , shiptoaddressid as ship_to_address_id
+        , shipmethodid as ship_method_id
+        , creditcardid as credit_card_id
+        , creditcardapprovalcode as credit_card_approval_code
+        , currencyrateid as currency_rate_id
+        , subtotal as sub_total
+        , taxamt as tax_amt
+        , freight
+        , totaldue as total_due
+        , comment
         , rowguid
-        , ModifiedDate as modified_date
+        , modifieddate as modified_date
     from source
 )
 

@@ -7,19 +7,19 @@ source as (
 
 , renamed as (
     select
-        BusinessEntityID as business_entity_id
-        , PersonType as person_type
-        , NameStyle as name_style
-        , Title
-        , FirstName as first_name
-        , MiddleName as middle_name
-        , LastName as last_name
-        , Suffix
-        , EmailPromotion as email_promotion
-        , AdditionalContactInfo as additional_contact_info
-        , Demographics
+        businessentityid as business_entity_id
+        , persontype as person_type
+        , namestyle as name_style
+        , title
+        , firstname as first_name
+        , middlename as middle_name
+        , lastname as last_name
+        , suffix
+        , emailpromotion as email_promotion
+        , additionalcontactinfo as additional_contact_info
+        , demographics
         , rowguid
-        , ModifiedDate as modified_date
+        , modifieddate as modified_date
     from source
 )
 

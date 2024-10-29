@@ -7,12 +7,12 @@ source as (
 
 , renamed as (
     select
-        CustomerID as customer_id
-        , PersonID as person_id
-        , StoreID as store_id
-        , TerritoryID as territory_id
+        customerid as customer_id
+        , personid as person_id
+        , storeid as store_id
+        , territoryid as territory_id
         , rowguid
-        , ModifiedDate as modified_date
+        , modifieddate as modified_date
     from source
 )
 

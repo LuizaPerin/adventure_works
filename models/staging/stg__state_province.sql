@@ -7,14 +7,14 @@ source as (
 
 , renamed as (
     select
-        StateProvinceID as state_province_id
-        , StateProvinceCode as state_province_code
-        , CountryRegionCode as coutry_region_code
-        , IsOnlyStateProvinceFlag as is_only_state_province_flag
-        , Name as state_province_name
-        , TerritoryID as territory_id
+        stateprovinceid as state_province_id
+        , stateprovincecode as state_province_code
+        , countryregioncode as coutry_region_code
+        , isonlystateprovinceflag as is_only_state_province_flag
+        , name as state_province_name
+        , territoryid as territory_id
         , rowguid
-        , ModifiedDate as modified_date
+        , modifieddate as modified_date
     from source
 )
 

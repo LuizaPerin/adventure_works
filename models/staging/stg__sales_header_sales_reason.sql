@@ -7,10 +7,10 @@ source as (
 
 , renamed as (
     select
-        {{ dbt_utils.generate_surrogate_key(['SalesOrderID', 'SalesReasonID']) }} as sk_sales_reason
-        , SalesOrderID as sales_order_id
-        , SalesReasonID as sales_reason_id
-        , ModifiedDate as modified_date
+        {{ dbt_utils.generate_surrogate_key(['salesorderid', 'salesreasonid']) }} as sk_sales_reason
+        , salesorderid as sales_order_id
+        , salesreasonid as sales_reason_id
+        , modifieddate as modified_date
     from source
 )
 

@@ -7,15 +7,15 @@ source as (
 
 , renamed as (
     select
-        AddressID as address_id
-        , AddressLine1 as address_line_1
-        , AddressLine2 as address_line_2
-        , City
-        , StateProvinceID as state_province_id
-        , PostalCode as postal_code
-        , SpatialLocation as spatial_location
+        addressid as address_id
+        , addressline1 as address_line_1
+        , addressline2 as address_line_2
+        , city
+        , stateprovinceid as state_province_id
+        , postalcode as postal_code
+        , spatiallocation as spatial_location
         , rowguid
-        , ModifiedDate as modified_date
+        , modifieddate as modified_date
     from source
 )
 

@@ -7,12 +7,12 @@ source as (
 
 , renamed as (
     select
-        BusinessEntityID as business_entity_id
-        , Name as store_name
-        , SalesPersonID as sales_person_id
-        , Demographics
+        businessentityid as business_entity_id
+        , name as store_name
+        , salespersonid as sales_person_id
+        , demographics
         , rowguid
-        , ModifiedDate as modified_date
+        , modifieddate as modified_date
     from source
 )
 
