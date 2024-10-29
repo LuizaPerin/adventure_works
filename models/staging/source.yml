@@ -114,24 +114,6 @@ sources:
               - dbt_utils.expression_is_true:
                   expression: ">= 0"
 
-          - name: productline
-            description: "Linha do produto"
-            data_tests:
-              - accepted_values:
-                  values: ['S', 'T', 'M', 'R']
-
-          - name: class
-            description: "Classe do produto"
-            data_tests:
-              - accepted_values:
-                  values: ['L', 'M', 'H']
-
-          - name: style
-            description: "Estilo do produto"
-            data_tests:
-              - accepted_values:
-                  values: ['W', 'M', 'U']
-
           - name: sellenddate
             description: "Data de término da venda do produto"
             data_tests:

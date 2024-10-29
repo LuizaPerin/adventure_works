@@ -7,7 +7,7 @@ source as (
 
 , renamed as (
     select
-        md5(SalesOrderID || SalesReasonID) as unique_id
+        {{ dbt_utils.generate_surrogate_key(['SalesOrderID', 'SalesReasonID']) }} as sk_sales_reason
         , SalesOrderID as sales_order_id
         , SalesReasonID as sales_reason_id
         , ModifiedDate as modified_date

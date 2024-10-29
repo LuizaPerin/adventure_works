@@ -4,7 +4,7 @@ models:
   - name: fct__vendas
     description: "Modelo que agrega informações sobre vendas, incluindo detalhes do pedido, informações do cliente e motivos de venda."
     columns:
-      - name: unique_id
+      - name: sk_salesline
         description: "Identificador único a partir de sales_order_id e product_id "
         data_data_tests:
           - unique
@@ -23,8 +23,8 @@ models:
       - name: customer_id
         description: "Identificador do cliente que realizou o pedido."
 
-      - name: sales_person_id
-        description: "Identificador do vendedor responsável pelo pedido."
+      - name: order_status
+        description: "Status do pedido. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled"
 
       - name: ship_to_address_id
         description: "Identificador do endereço de entrega do pedido."

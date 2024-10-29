@@ -22,7 +22,7 @@ sales_header as (
         , sales_header.sales_order_id as sales_order_id
         , sales_header.order_date as order_date
         , sales_header.customer_id as customer_id
-        , sales_header.sales_person_id as sales_person_id
+        , sales_header.status as order_status
         , sales_header.ship_to_address_id as ship_to_address_id
         , sales_header.credit_card_id as credit_card_id
         , sales_detail.product_id as product_id
