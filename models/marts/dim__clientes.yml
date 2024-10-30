@@ -5,6 +5,12 @@ models:
     description: "Tabela de dimensão clientes. Os clientes podem ser pessoas ou lojas. Tabelas de origem: stg__customer, stg__store, stg__person"
 
     columns:
+      - name: sk_customer
+        description: "Identificador único a partir de customer_id e person_id."
+        data_data_tests:
+          - unique
+          - not_null
+
       - name: customer_id
         description: "ID único do cliente. Referencia a tabela de clientes."
         data_tests:
@@ -27,7 +33,7 @@ models:
       - name: last_name
         description: "Sobrenome da pessoa associada ao cliente."
 
-      - name: nome_cliente
+      - name: customer_name
         description: "Nome e sobrenome da pessoa associada ao cliente."
 
       - name: store_id

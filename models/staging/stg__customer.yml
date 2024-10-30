@@ -4,6 +4,12 @@ models:
   - name: stg__customer
     description: "Tabela que armazena informações sobre clientes, que podem ser pessoas ou lojas."
     columns:
+      - name: sk_customer
+        description: "Identificador único a partir de customer_id e person_id."
+        data_data_tests:
+          - unique
+          - not_null
+
       - name: customer_id
         description: "Identificador único do cliente."
         data_tests:

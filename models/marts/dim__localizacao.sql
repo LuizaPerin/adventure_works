@@ -17,7 +17,8 @@ address_table as (
 
 , dim_localizacao as (
     select
-        address_table.address_id as adress_id
+        {{ dbt_utils.generate_surrogate_key(['address_id', 'postal_code']) }} as sk_address
+        , address_table.address_id as address_id
         , state_province.coutry_region_code as country_region_code
         , address_table.address_line_1 as address_line_1
         , address_table.city as city

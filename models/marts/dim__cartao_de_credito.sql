@@ -1,13 +1,16 @@
 with
 
 credit_card as (
-    select *
+    select
+    {{ dbt_utils.generate_surrogate_key(['credit_card_id', 'card_type']) }} as sk_credit_card
+    ,*
     from {{ ref('stg__credit_card') }}
 )
 
 , dim_cartao as (
     select
-        credit_card_id
+        sk_credit_card
+        , credit_card_id
         , card_type
     from credit_card
 )

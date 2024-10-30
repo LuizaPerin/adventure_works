@@ -5,7 +5,7 @@ models:
     description: "Modelo que relaciona os motivos de venda com os pedidos de venda. Tabelas de origem: stg__sales_header_sales_reason e stg__sales_reason"
     columns:
       - name: sk_sales_reason
-        description: "Identificador único a partir de sales_order_id e sales_reason_id"
+        description: "Identificador único a partir de sales_order_id e sales_reason_id."
         data_data_tests:
           - unique
           - not_null

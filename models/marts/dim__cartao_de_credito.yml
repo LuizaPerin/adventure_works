@@ -4,6 +4,12 @@ models:
   - name: dim__cartao_de_credito
     description: "Tabela dimensão de cartões de crédito. Tabela de origem: stg__credit_card"
     columns:
+      - name: sk_credit_card
+        description: "Identificador único a partir de credit_card_id e card_type."
+        data_data_tests:
+          - unique
+          - not_null
+
       - name: credit_card_id
         description: "Identificador único do cartão de crédito."
         data_tests:

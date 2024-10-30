@@ -4,7 +4,13 @@ models:
   - name: dim__localizacao
     description: "Tabela de dimensão localização. Tabelas de origem: stg__address, stg__country_region e stg__state_province"
     columns:
-      - name: adress_id
+      - name: sk_address
+        description: "Identificador único a partir de address_id e postal_code."
+        data_data_tests:
+          - unique
+          - not_null
+
+      - name: address_id
         description: "ID do endereço, único para cada endereço."
         data_tests:
           - not_null

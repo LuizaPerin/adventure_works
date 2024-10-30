@@ -1,13 +1,16 @@
 with
 
 product as (
-    select *
+    select
+    {{ dbt_utils.generate_surrogate_key(['product_id', 'product_name']) }} as sk_product
+    ,*
     from {{ ref('stg__product') }}
     )
 
 , dim_produtos as (
     select
-        product_id
+        sk_product
+        , product_id
         , product_name
         , product_number
         , safety_stock_level

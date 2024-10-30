@@ -4,6 +4,12 @@ models:
   - name: dim__produtos
     description: "Tabela de dimensão produtos. Tabela de origem: stg__product"
     columns:
+      - name: sk_product
+        description: "Identificador único a partir de product_id e product_name."
+        data_data_tests:
+          - unique
+          - not_null
+
       - name: product_id
         description: "Identificador único do produto."
         data_tests:
