@@ -3,9 +3,9 @@ with
     product as (
         select
             {{ dbt_utils.generate_surrogate_key(['product_id', 'product_name']) }} as sk_product
-            ,*
+            , *
         from {{ ref('stg__product') }}
-        )
+    )
 
     , dim_produtos as (
         select

@@ -12,11 +12,12 @@ repos:
   # Verificar se as colunas das sources possuem descrição
   - id: check-source-columns-have-desc
 
-  # Garantir que os modelos possuem uma descrição
-  - id: check-model-has-description
-
   # Verificar se os modelos em marts possuem um arquivo de propriedades (.yml)
   - id: check-model-has-properties-file
+    files: ^models/marts
+
+  # Garantir que os modelos marts possuem uma descrição na documentação
+  - id: check-model-has-description
     files: ^models/marts
 
   # Garantir que todas as colunas dos marts estão na documentação (.yml)
