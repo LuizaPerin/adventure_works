@@ -1,0 +1,42 @@
+repos:
+- repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  rev: v1.2.1
+  hooks:
+  # Gerar documentação do dbt
+  - id: dbt-docs-generate
+    args: ["--cmd-flags", "++no-compile"]
+
+  # Verificar se as tabelas source possuem uma descrição
+  - id: check-source-table-has-description
+
+  # Verificar se as colunas das sources possuem descrição
+  - id: check-source-columns-have-desc
+
+  # Garantir que os modelos possuem uma descrição
+  - id: check-model-has-description
+
+  # Verificar se os modelos em marts possuem um arquivo de propriedades (.yml)
+  - id: check-model-has-properties-file
+    files: ^models/marts
+
+  # Garantir que todas as colunas dos marts estão na documentação (.yml)
+  - id: check-model-has-all-columns
+    files: ^models/marts
+
+  # Garantir que as colunas dos modelos em marts possuam uma descrição
+  - id: check-model-columns-have-desc
+    files: ^models/marts
+
+  # Garantir que os modelos possuam teste de unicidade
+  - id: check-model-has-tests-by-name
+    files: ^models/marts
+    args: ["--tests", "unique=1", "--"]
+
+  # Definir e garantir o padrão de nomenclatura dos modelos
+  - id: check-model-name-contract
+    args: [--pattern, "(stg_).*"]
+    files: models/staging/
+
+  - id: check-model-name-contract
+    args: [--pattern, "(dim_|fct_|int_).*"]
+    files: models/marts/
