@@ -6,7 +6,7 @@ models:
     columns:
       - name: sk_product
         description: "Identificador único a partir de product_id e product_name."
-        data_data_tests:
+        data_tests:
           - unique
           - not_null
 

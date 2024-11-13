@@ -6,7 +6,7 @@ models:
     columns:
       - name: sk_address
         description: "Identificador único a partir de address_id e postal_code."
-        data_data_tests:
+        data_tests:
           - unique
           - not_null
 

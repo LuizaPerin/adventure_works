@@ -6,7 +6,7 @@ models:
     columns:
       - name: sk_sales_reason
         description: "Identificador único a partir de sales_order_id e sales_reason_id."
-        data_data_tests:
+        data_tests:
           - unique
           - not_null
 

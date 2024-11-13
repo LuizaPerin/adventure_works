@@ -1,16 +1,16 @@
 with
 
-source as (
-    select *
-    from {{ source('raw-data','creditcard') }}
-)
+    source as (
+        select *
+        from {{ source('raw-data','creditcard') }}
+    )
 
-, renamed as (
-    select
-        creditcardid as credit_card_id
-        , cardtype as card_type
-        , modifieddate as modified_date
-    from source
-)
+    , renamed as (
+        select
+            creditcardid as credit_card_id
+            , cardtype as card_type
+            , modifieddate as modified_date
+        from source
+    )
 
 select * from renamed

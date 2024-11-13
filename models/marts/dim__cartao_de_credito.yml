@@ -6,7 +6,7 @@ models:
     columns:
       - name: sk_credit_card
         description: "Identificador único a partir de credit_card_id e card_type."
-        data_data_tests:
+        data_tests:
           - unique
           - not_null
 
